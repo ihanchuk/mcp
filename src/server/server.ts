@@ -1,9 +1,9 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
-import { FAKE_USERS } from "./tools/register-user/stub";
-import { registerMCPTools } from "./utils/regiterTools";
+import { FAKE_USERS } from "./stubs/stub";
 import { MCP_TOOLS } from "./tools";
+import { registerMCPTools } from "./utils/regiterTools";
 
 const server = new McpServer(
   {
@@ -20,29 +20,6 @@ const server = new McpServer(
 );
 
 registerMCPTools(server, MCP_TOOLS);
-
-server.registerTool(
-  "List-All-Users",
-  {
-    description: "Get complete list of Users",
-    annotations: {
-      readOnlyHint: false, // Является ли инструмент строго безопасным для чтения (аналог GET-запроса).
-      destructiveHint: true, // Указывает, что метод разрушительный (удаляет данные)
-      idempotentHint: false, // Повторный вызов упадет с ошибкой (таблицы уже нет)
-      openWorldHint: false, // Инструмент работает локально с БД, а не с внешним интернетом
-    },
-  },
-  async () => {
-    return {
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify({ users: FAKE_USERS }, null, 2),
-        },
-      ],
-    };
-  },
-);
 
 server.registerResource(
   "all-users",

@@ -1,5 +1,5 @@
 import type { TRegisterUserInput } from "./schema";
-import { FAKE_USERS } from "./stub";
+import { FAKE_USERS } from "../../stubs/stub";
 
 export async function registerUserHandler(input: TRegisterUserInput) {
   const { userState } = input;
