@@ -1,7 +1,9 @@
-import type { RegisterUserInput } from "./schema.ts";
-import { FAKE_USERS } from "./stub.js";
+import type { TRegisterUserInput } from "./schema";
+import { FAKE_USERS } from "./stub";
 
-export async function registerUserHandler({ userState }: RegisterUserInput) {
+export async function registerUserHandler(input: TRegisterUserInput) {
+  const { userState } = input;
+
   FAKE_USERS.push(userState);
 
   return {

@@ -2,10 +2,8 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
 import { FAKE_USERS } from "./tools/register-user/stub";
-import {
-  registerUserDefinition,
-  registerUserHandler,
-} from "./tools/register-user";
+import { registerMCPTools } from "./utils/regiterTools";
+import { MCP_TOOLS } from "./tools";
 
 const server = new McpServer(
   {
@@ -21,11 +19,7 @@ const server = new McpServer(
   },
 );
 
-server.registerTool(
-  registerUserDefinition.name,
-  registerUserDefinition.config,
-  registerUserHandler,
-);
+registerMCPTools(server, MCP_TOOLS);
 
 server.registerTool(
   "List-All-Users",

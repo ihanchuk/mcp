@@ -1,13 +1,14 @@
 import { registerUserSchema } from "./schema";
+import { registerUserHandler } from "./handler";
 
-export const registerUserDefinition = {
+import type { TTool } from "../../types/tool";
+
+export const registerUserTool: TTool<typeof registerUserSchema> = {
   name: "Register-new-User",
 
   config: {
     description: "Registration of new User",
-
     inputSchema: registerUserSchema,
-
     annotations: {
       readOnlyHint: false,
       destructiveHint: false,
@@ -15,4 +16,6 @@ export const registerUserDefinition = {
       openWorldHint: false,
     },
   },
+
+  handler: registerUserHandler,
 };
