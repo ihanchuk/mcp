@@ -1,18 +1,16 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import z from "zod";
 
-const FAKE_USERS: Array<{
-  name: string;
-  email: string;
-  address: string;
-  phone: string;
-}> = [];
+import { FAKE_USERS } from "./tools/register-user/stub";
+import {
+  registerUserDefinition,
+  registerUserHandler,
+} from "./tools/register-user";
 
 const server = new McpServer(
   {
-    name: "obe",
-    version: "1.0",
+    name: "User-MCP",
+    version: "0.1",
   },
   {
     capabilities: {
@@ -24,35 +22,9 @@ const server = new McpServer(
 );
 
 server.registerTool(
-  "Register-new-User",
-  {
-    description: "Registration of new User",
-    inputSchema: {
-      userState: z.object({
-        name: z.string().min(3, "Name is required"),
-        email: z.string().email(),
-        address: z.string(),
-        phone: z.string(),
-      }),
-    },
-    annotations: {
-      readOnlyHint: false, // Является ли инструмент строго безопасным для чтения (аналог GET-запроса).
-      destructiveHint: true, // Указывает, что метод разрушительный (удаляет данные)
-      idempotentHint: false, // Повторный вызов упадет с ошибкой (таблицы уже нет)
-      openWorldHint: false, // Инструмент работает локально с БД, а не с внешним интернетом
-    },
-  },
-  async ({ userState }) => {
-    FAKE_USERS.push(userState);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `User ${userState.name} was created`,
-        },
-      ],
-    };
-  },
+  registerUserDefinition.name,
+  registerUserDefinition.config,
+  registerUserHandler,
 );
 
 server.registerTool(
