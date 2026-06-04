@@ -1,10 +1,12 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
-import { MCP_TOOLS } from "./tools";
-import { registerMCPTools } from "./utils/regiterTools";
 import { registerMCPResources } from "./utils/registerResources";
 import { MCP_RESOURCES } from "./resources";
+import { registerToolsV2 } from "./mcp-tools/utils";
+import { MCP_TOOLS_V2 } from "./mcp-tools";
+import { MCP_PROMPTS_V2 } from "./mcp-prompts";
+import { registerPromptsV2 } from "./mcp-prompts/utils";
 
 async function main() {
   const transport = new StdioServerTransport();
@@ -22,7 +24,8 @@ async function main() {
     },
   );
 
-  registerMCPTools(server, MCP_TOOLS);
+  registerToolsV2(server, MCP_TOOLS_V2);
+  registerPromptsV2(server, MCP_PROMPTS_V2);
   registerMCPResources(server, MCP_RESOURCES);
 
   await server.connect(transport);

@@ -1,0 +1,11 @@
+import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
+import { AnyPrompt } from "./types";
+
+export function registerPromptsV2(
+  server: McpServer,
+  propmpts: readonly AnyPrompt[],
+) {
+  for (const { name, config, handler } of propmpts) {
+    server.registerPrompt(name, config, handler);
+  }
+}
