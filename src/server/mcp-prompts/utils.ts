@@ -3,9 +3,9 @@ import { AnyPrompt } from "./types";
 
 export function registerPromptsV2(
   server: McpServer,
-  propmpts: readonly AnyPrompt[],
+  prompts: readonly AnyPrompt[],
 ) {
-  for (const { name, config, handler } of propmpts) {
+  for (const { name, config, handler } of prompts) {
     server.registerPrompt(name, config, handler);
   }
 }

@@ -5,7 +5,7 @@ import { userInfoRequest } from "./schema";
 export async function giveMeDetailsHandler(
   args: InferShape<typeof userInfoRequest>,
 ): Promise<TPromptResponse> {
-  const { id, email } = args.state;
+  const { id, email } = args;
 
   return {
     messages: [
