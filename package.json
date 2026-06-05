@@ -7,15 +7,19 @@
     "server:build": "tsc",
     "server:dev": "tsx src/server/server.ts",
     "server:inspect": "DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector npm run server:dev",
-    "server:build:watch": "tsc --watch"
+    "server:build:watch": "tsc --watch",
+    "dev": "tsx watch src/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
+    "@nats-io/nats-core": "^3.4.0",
+    "@nats-io/transport-node": "^3.4.0",
     "dotenv": "^17.4.2",
+    "nats": "^2.29.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {
