@@ -1,0 +1,23 @@
+services:
+  nats:
+    image: nats:latest
+    container_name: nats
+    command:
+      - "-js"
+      - "--store_dir"
+      - "/data"
+      - "-m"
+      - "8222"
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    volumes:
+      - ./nats_data:/data
+
+  nats-box:
+    image: natsio/nats-box
+    container_name: nats-box
+    depends_on:
+      - nats
+    stdin_open: true
+    tty: true
