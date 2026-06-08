@@ -1,6 +1,6 @@
-import { allUserSchema } from "./schema";
-import { allUserHandler } from "./handler";
-import { TTool } from "../types";
+import { allUserSchema } from "./schema.js";
+import { allUserHandler } from "./handler.js";
+import { TTool } from "../types.js";
 
 export const allUsersTool: TTool<typeof allUserSchema> = {
   name: "All-User",

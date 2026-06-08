@@ -1,6 +1,6 @@
-import { FAKE_USERS } from "../../stubs/stub";
-import { InferShape } from "../types";
-import type { registerUserSchema } from "./schema";
+import { FAKE_USERS } from "../../stubs/stub.js";
+import { InferShape } from "../types.js";
+import type { registerUserSchema } from "./schema.js";
 
 type Args = InferShape<typeof registerUserSchema>;
 

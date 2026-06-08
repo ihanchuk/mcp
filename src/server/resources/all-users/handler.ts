@@ -1,4 +1,4 @@
-import { FAKE_USERS } from "../../stubs/stub";
+import { FAKE_USERS } from "../../stubs/stub.js";
 
 export const allUsersResourceHandler = async () => {
   return {

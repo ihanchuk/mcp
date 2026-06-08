@@ -1,6 +1,6 @@
-import { InferShape } from "../../types/common";
-import { TPromptResponse } from "../types";
-import { userInfoRequest } from "./schema";
+import { InferShape } from "../../types/common.js";
+import { TPromptResponse } from "../types.js";
+import { userInfoRequest } from "./schema.js";
 
 export async function giveMeDetailsHandler(
   args: InferShape<typeof userInfoRequest>,

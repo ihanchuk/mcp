@@ -1,5 +1,5 @@
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
-import { AnyPrompt } from "./types";
+import { AnyPrompt } from "./types.js";
 
 export function registerPromptsV2(
   server: McpServer,

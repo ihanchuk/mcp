@@ -1,5 +1,5 @@
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
-import { AnyTool } from "./types";
+import { AnyTool } from "./types.js";
 
 export function registerToolsV2(server: McpServer, tools: readonly AnyTool[]) {
   for (const { name, meta, schema, handler } of tools) {

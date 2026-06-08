@@ -1,4 +1,4 @@
-import { InferShape, TZodRecord } from "../types/common";
+import { InferShape, TZodRecord } from "../types/common.js";
 import type { PromptMessage } from "@modelcontextprotocol/sdk/types";
 
 export type TPromptResponse = {

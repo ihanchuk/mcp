@@ -1,4 +1,4 @@
-import { InferShape, TZodRecord } from "../types/common";
+import { InferShape, TZodRecord } from "../types/common.js";
 
 export type ToolAnnotations = {
   readOnlyHint?: boolean;

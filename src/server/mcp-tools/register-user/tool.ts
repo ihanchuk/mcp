@@ -1,6 +1,6 @@
-import { registerUserSchema } from "./schema";
-import { registerUserHandler } from "./handler";
-import { TTool } from "../types";
+import { registerUserSchema } from "./schema.js";
+import { registerUserHandler } from "./handler.js";
+import { TTool } from "../types.js";
 
 export const registerUserTool: TTool<typeof registerUserSchema> = {
   name: "Register-User",

@@ -1,6 +1,6 @@
-import { TPrompt } from "../types";
-import { giveMeDetailsHandler } from "./handler";
-import { userInfoRequest } from "./schema";
+import { TPrompt } from "../types.js";
+import { giveMeDetailsHandler } from "./handler.js";
+import { userInfoRequest } from "./schema.js";
 
 export const UserInfoPrompt: TPrompt<typeof userInfoRequest> = {
   name: "User Details Prompt",

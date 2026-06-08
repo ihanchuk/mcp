@@ -1,5 +1,5 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
-import { RegisterResources, TResource } from "../types/resource";
+import { RegisterResources, TResource } from "../types/resource.js";
 
 export const registerMCPResources: RegisterResources = (
   server: McpServer,

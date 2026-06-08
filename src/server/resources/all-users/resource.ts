@@ -1,5 +1,5 @@
-import { TResource } from "../../types/resource";
-import { allUsersResourceHandler } from "./handler";
+import { TResource } from "../../types/resource.js";
+import { allUsersResourceHandler } from "./handler.js";
 
 export const allUsersResource: TResource = [
   "all-users",
