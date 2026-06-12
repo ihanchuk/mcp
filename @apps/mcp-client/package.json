@@ -1,0 +1,8 @@
+{
+  "name": "@apps/mcp-client",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts"
+  }
+}
