@@ -1,0 +1,15 @@
+{
+  "name": "@services/user-service",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "nats": "^2.29.3",
+    "zod": "^4.4.3",
+    "@shared/schemas": "*",
+    "@shared/utils": "*"
+  }
+}
