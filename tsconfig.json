@@ -3,13 +3,12 @@
     "target": "ES2022",
     "module": "Node16",
     "moduleResolution": "Node16",
-    "outDir": "./build",
-    "rootDir": "__src",
+
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["__src/**/*"],
-  "exclude": ["node_modules"]
+    "forceConsistentCasingInFileNames": true,
+
+    "baseUrl": "."
+  }
 }

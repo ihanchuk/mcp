@@ -7,5 +7,14 @@
     "build:watch": "tsc --watch",
     "dev": "tsx src/server/server.ts",
     "inspect": "DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector npm run dev"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "nats": "^2.29.3",
+    "zod": "^4.4.3",
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.21.2"
   }
 }

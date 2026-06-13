@@ -1,31 +1,16 @@
 {
   "name": "mcp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "server:build": "tsc",
-    "server:dev": "tsx src/server/server.ts",
-    "server:inspect": "DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector npm run server:dev",
-    "server:build:watch": "tsc --watch",
-    "dev": "tsx watch src/index.ts"
+    "build": "npm run build -ws"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "module",
   "private": true,
   "workspaces": [
     "@apps/*"
   ],
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.29.0",
-    "dotenv": "^17.4.2",
-    "nats": "^2.29.3",
-    "zod": "^4.4.3"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@modelcontextprotocol/inspector": "^0.21.2",
     "@types/node": "^25.9.1",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3"
